@@ -1,0 +1,1107 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="css/all.css"/>
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="css/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-table.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-table-fixed-columnsa.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lte IE 9]>
+    <script src="js/respond.min.js"></script>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/rem.js"></script>
+    <link rel="stylesheet" href="css/ie-css3.htc"/>
+    <![endif]-->
+    <style>
+        body,html{
+            height:100%;
+            overflow-y: auto;
+        }
+        body{
+            padding:0;
+            margin:0;
+
+
+            width: 100%;
+            height: auto;
+            min-width: 1200px;
+            font-weight: bolder;
+            overflow-x: hidden;
+        }
+        *{
+            outline: none;
+            font-size: 12px\9 !important;
+            behavior: url(css/ie-css3.htc);
+        }
+
+        ul{
+            list-style: none;
+        }
+        .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+            position: relative;
+            min-height: 1px;
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+        /***头部***/
+        header{
+            margin:0 auto;
+            height: 46px;
+            line-height: 46px;
+
+        }
+        .lf{
+            float: left;
+            color: #29a09f;
+
+        }
+        .lf>ul>li{
+            float: left;
+            position: relative;
+            left: -23px;
+            font-size: 0.9rem;
+            font-weight: bolder;
+        }
+        .rg{
+            float: right;
+            color: #29a09f;
+            padding-right:17px;
+            position: relative;
+        }
+        .rg ul>li{
+            float: left;
+            font-size: 0.9rem;
+            font-weight: bolder;
+        }
+        .rg ul>li>img{
+            margin-left: 10px;
+
+        }
+        /***导航栏***/
+        nav{
+            margin:0 auto;
+            height: 40px;
+            line-height: 40px;
+            background-color: #29a09f;
+            margin-top: -10px;
+        }
+        nav ul>li{
+            float: left;
+            position: relative;
+            left: -23px;
+            color: #fff;
+            white-space: nowrap !important;
+            cursor: pointer;
+        }
+
+        #exit{
+            cursor: pointer;
+        }
+        /***菜单导航***/
+        #menulist{
+            clear: both;
+            margin:0 auto;
+            height: 30px;
+            line-height: 10px;
+            background-color: #fff;
+
+            border-bottom: 10px solid #f0f2f5;
+        }
+        #menulist ul>li{
+            float: left;
+            position: relative;
+            left: -23px;
+        }
+        .menu1,.menu2,.menu3{
+            font-size: 0.7rem;
+            font-size: 0.8rem\9;
+            cursor: pointer;
+        }
+        .menu1,.menu2{
+            color: #999999;
+        }
+        .menu3{
+            color: #000000;
+        }
+        #lft,#rgt{
+            height:100% !important;
+            white-space: nowrap;
+            padding-bottom: 20px;
+            padding-right: 0px;
+        }
+        #lft{
+            border-right: 10px solid #f0f2f5;
+        }
+        .dd{
+            z-index: 5;
+            position: relative;
+            margin-left: 18%;
+            margin-right: 15%;
+        }
+        /**患者录入**/
+        .menutop{
+            border-bottom: 10px solid #f0f2f5;
+            position: relative;
+            padding-left: 17px;
+            height: 152px;
+            height: 152px\9;
+        }
+        .hzlr{
+            font-weight: bolder;
+            color: #333;
+            font-size: 0.9rem;
+            height: 40px;
+            line-height: 40px;
+
+        }
+        .hzlr>span{
+            border-left: 4px solid #29a09f;
+            padding-left: 6px;
+        }
+        /**就诊卡号**/
+        .jzkh{
+            width: 40%;
+            height: 30px;
+            background-color: #fafafa;
+            padding-left: 4px;
+            outline: none;
+            border: 1px solid #e5e5e5;
+            border-radius: 3px;
+            margin-left: 6px;
+            font-size: 0.9rem;
+
+        }
+        #jzkhvalue{
+            margin-left: 10px;
+            height: 30px;
+            padding-left: 10px;
+            border-radius: 3px;
+            border: 1px solid #e5e5e5;
+            width: 45%;
+            font-size: 0.9rem;
+            position: relative;
+            top:-9px\9
+        }
+        /**录入重置**/
+        #lr{
+            width: 35%;
+            height: 30px;
+            background-color: #29a09f;
+            color: #fff;
+            border: transparent;
+            border-radius: 3px;
+            margin-left: 5px;
+
+        }
+        #cz{
+            margin-left: 20px;
+            width: 73px;
+            height: 30px;
+            background-color: #7dc9c9;
+            color: #fff;
+            border: transparent;
+            border-radius: 3px;
+            margin-right: 30px;
+
+        }
+
+
+        .menubottom{
+            position: relative;
+            padding-left: 17px;
+            height: auto;
+        }
+        /****接诊叫号*****/
+        .hzjh{
+            font-weight: bolder;
+            color: #333;
+            font-size: 0.9rem;
+            height: 40px;
+            line-height: 40px;
+        }
+        .jzsy{
+            font-size: 0.8rem;
+            color: #999999;
+            margin-left: 1%;
+        }
+        .hznum{
+            color: #29a09f;
+        }
+        /*****接诊状态*****/
+        .jzState{
+            display: inline-block;
+            height: 44px;
+            width: 47%;
+            line-height: 38px;
+            text-align: center;
+            margin-left: 0;
+            border: 1px solid #dfdfdf;
+            border-top: 4px solid transparent;
+            background-color: #FAFAFA;
+            cursor: pointer;
+        }
+        #jzTab{
+            border-top: 4px solid #29a09f;
+            border-bottom:1px solid transparent;
+            border-right:1px solid transparent;
+            background-color: #fff;
+            color: #29a09f;
+        }
+        #yjzTab{
+            position: relative;
+            left: -4px;
+        }
+        /****叫号接诊响应****/
+        #jhlist{
+            font-weight: bolder;
+            color: #999;
+            font-size: 0.8rem;
+            border-left: 1px solid #dfdfdf;
+            border-right: 1px solid #dfdfdf;
+
+            width: 93.4%;
+            position: relative;
+            top:-10px;
+            overflow: hidden;
+
+            overflow-y: auto;
+        }
+        #jhlist>div{
+            margin-top: 15px;
+            border-top: 1px solid #dfdfdf;
+        }
+        .jzhState{
+            height: 44px;
+            width: 45%;
+            text-align: center;
+            padding-left: 1%;
+            margin-right: 1%;
+            font-size: 0.9rem;
+            margin-left: 5%;
+        }
+        .jzhState:nth-child(2){
+            margin-left: 5%;
+        }
+        .jzhState b{
+            color: #333;
+        }
+
+        #jzDone,#jhDone{
+            color: #29a09f;
+            border-top: 1px solid #dfdfdf;
+            border-bottom: 1px solid #dfdfdf;
+            display: inline-block;
+            height: 30px;
+            width: 49.2%;
+            line-height: 25px;
+            text-align: center;
+            cursor: pointer;
+        }
+        #jzDone{
+            position: relative;
+            left: -3px;
+            width: 51%;
+        }
+        #jhDone{
+            border-right: 1px solid #dfdfdf;
+        }
+        /****单据复制~打印****/
+        .rgtmenu{
+            height: 40px;
+            line-height: 38px;
+            border-bottom: 1px solid #dfdfdf;
+        }
+        .rgtlist{
+            display:inline;
+            font-size: 0.9rem;
+            color: #29a09f;
+            cursor: pointer;
+        }
+        .rgtlist>img{
+            margin-right: 6px;
+        }
+        .rgtlist:not(:first-child){
+            margin-left: 40px !important;
+
+        }
+        .rgtlist{
+            margin-left: 40px \9;
+        }
+        .rgtlist:first-child{
+            margin-left: 0px \9;
+        }
+        /******患者信息******/
+        .hzxx{
+            height: 40px;
+            line-height: 38px;
+        }
+        .hzlist{
+            display:inline;
+            font-size: 0.9rem;
+            color: #333;
+            cursor: default;
+            overflow-x: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .hzlist>b{
+            color: #666;
+        }
+        /************药品选项卡***********/
+        .menuypState{
+            display: inline-block;
+            height: 44px;
+            width: 10%;
+            line-height: 38px;
+            text-align: center;
+            margin-left: 0;
+            border: 1px solid #dfdfdf;
+            border-left: 1px solid transparent !important;
+            border-top: 4px solid transparent;
+            background-color: #FAFAFA;
+            cursor: pointer;
+        }
+        #xcyTab{
+            border-top: 4px solid #29a09f;
+            border-bottom:1px solid transparent;
+            border-right:1px solid #dfdfdf;
+            background-color: #fff;
+            color: #29a09f;
+        }
+        #hjlist{
+            position: relative;
+            height: 44px;
+            line-height: 40px;
+            border:1px solid transparent !important;
+            border-top: 4px solid transparent  !important;
+            background-color: #ffffff !important;
+            border-bottom: 1px solid #dfdfdf  !important;
+            width: 40%;
+            padding-left: 40px;
+            font-size: 0.9rem;
+        }
+        #hjlist span{
+            margin-right: 6%;
+        }
+        #hjlist b{
+            color: #f75c5c;
+        }
+        /**************保存提交打印等**************/
+        .btnbc{
+            clear: both;
+            white-space: nowrap;
+            padding-top: 10px;
+            margin-bottom: 14px;
+        }
+        #bcbtjbtn{
+            width: 130px;
+            height: 30px;
+            background-color: #29a09f;
+            color: #fff;
+            border: transparent;
+            border-radius: 3px;
+
+
+        }
+        #dybtn{
+            width: 90px;
+            height: 30px;
+            background-color: #29a09f;
+            color: #fff;
+            border: transparent;
+            border-radius: 3px;
+            margin-left: 20px;
+
+        }
+        #scxdcfbtn{
+            width: 130px;
+            height: 30px;
+            background-color: #29a09f;
+            color: #fff;
+            border: transparent;
+            border-radius: 3px;
+            margin-left: 20px;
+
+        }
+        #cxbtn{
+            margin-left: 20px;
+            width: 90px;
+            height: 30px;
+            background-color: #7dc9c9;
+            color: #fff;
+            border: transparent;
+            border-radius: 3px;
+            margin-right: 30px;
+
+        }
+
+        /*********处方********/
+        .cflabel{
+            width: 220px;
+            height: 40px;
+            line-height: 38px;
+            margin-top: 10px;
+            background-color: #29a09f;
+            color: #ffffff;
+            text-align: center;
+        }
+        #cflist{
+            position: relative;
+            top:-10px;
+            height: 44px;
+            background-color: #ffffff !important;
+            width: 220px;
+            padding-left: 1px;
+            font-size: 0.9rem;
+            font-weight: bolder;
+            color: #999;
+            border-left: 1px solid #dfdfdf;
+            border-right: 1px solid #dfdfdf;
+            overflow: hidden;
+            overflow-y: auto;
+        }
+
+        #cflist>div{
+            margin-top: 15px;
+            border-top: 1px solid #dfdfdf;
+
+        }
+        #cflist>div>p{
+            margin-top: 14px;
+        }
+        /*******提交删除处方********/
+        #tjDone,#deleteDone{
+            color: #29a09f;
+            border-top: 1px solid #dfdfdf;
+            border-bottom: 1px solid #dfdfdf;
+            display: inline-block;
+            height: 30px;
+            width: 50%;
+            line-height: 25px;
+            text-align: center;
+            cursor: pointer;
+        }
+        #tjDone{
+            position: relative;
+            left: 0px;
+            width: 51%;
+        }
+        #deleteDone{
+            border-left: 1px solid #dfdfdf;
+            position: relative;
+            left: -4px;
+            color: #666;
+        }
+        /********处方类型复选***********/
+        .cfType>span:not(:first-child){
+            margin-left: 20px;
+        }
+        .cfType>span{
+            margin-left: 20px\9;
+            cursor: pointer;
+        }
+        .cfType>span:first-child{
+            margin-left: 0\9;
+        }
+        .cfType>span>input, .cfType>span>label{
+            margin-right: 6px;
+        }
+        .cfType>span>input{
+            position: relative;
+            top: 4px;
+            top: 2px\9;
+        }
+        .cfType>span>select{
+            width: 100px;
+            position: relative;
+            top: 2px\9;
+            cursor: pointer;
+        }
+
+
+        #parent{
+            background: url('img/selectDir.png') right center no-repeat;
+            display: inline-block;
+            width: 100px;
+            height: 20px;
+            overflow: hidden;
+            border: solid 1px #dfdfdf;
+            position: relative;
+            top:5px;
+            cursor: pointer;
+        }
+        option{
+            width: 100px;
+        }
+        #parent select{
+            -webkit-appearance:none;
+            -moz-appearance:none;
+            appearance:none;
+            background:transparent;
+            border:none;
+            padding-left:10px;
+            width: 120px;
+        }
+
+        #parent1{
+            background: url('img/selectDir.png') right center no-repeat;
+            display: inline-block;
+            width: 45%;
+            height: 29px;
+            overflow: hidden;
+            border: solid 1px #dfdfdf;
+            position: relative;
+            top:9px;
+            top:4px\9;
+            cursor: pointer;
+            font-size: 0.9rem;
+            border-radius: 3px;
+            background-color: #ffffff\9;
+        }
+
+        #parent1 select{
+            -webkit-appearance:none;
+            -moz-appearance:none;
+            appearance:none;
+            border:none;
+            background: transparent;
+            width: 120%;
+            margin-top: -10px\9;
+        }
+
+        /********报表********/
+        table{
+            border: 1px solid #dfdfdf;
+        }
+        thead{
+            background-color: #FAFAFA;
+            border-bottom: transparent;
+        }
+        thead>tr>th:last-child,tbody>tr>td:last-child{
+            border-left: 1px solid #dfdfdf;
+        }
+        td{
+            color: #666666;
+            font-size: 0.9rem;
+        }
+        td>a{
+            color: #FE3434 !important;
+            text-decoration: underline;
+            font-size: 0.9rem;
+        }
+
+        th,td{
+
+            width: 100px;
+        }
+        input[type=checkbox]{
+            color: red !important;
+        }
+        .thead>div{
+            display: inline-table;
+            width: 7.2%;
+            border: 1px solid #dfdfdf;
+            margin-left: -4.5px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 0.9rem;
+        }
+        .thead{
+            padding-left: 10px;
+            overflow: hidden;
+            overflow-y: scroll;
+            background-color: #FAFAFA;
+        }
+        .tbody{
+            height:200px;
+            overflow: hidden;
+            overflow-y: scroll;
+            padding-left: 10px;
+        }
+        .tbody>div>div{
+            display:  inline-table;
+            width: 7.2%;
+            border: 1px solid #dfdfdf;
+            margin-left: -4.5px;
+            text-align: center;
+            height: 30px;
+            line-height: 30px;
+            font-size: 0.9rem;
+            margin-top: -1px;
+        }
+        .thead::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+            color: #fff;
+        }
+        .tbody::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+            color: #29a09f;
+        }
+        .tbody::-webkit-scrollbar-thumb {
+            height: 4px;
+            width: 0px;
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+            background-color: #29a09f;
+        }
+        .tbody::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+            border-radius: 0;
+            background: rgba(0,0,0,0.1);
+        }
+
+        .tbody{
+            border-radius: 10px !important;
+            behavior: url(css/ie-css3.htc) !important;
+            scrollbar-arrow-color: #29a09f !important;
+            scrollbar-face-color: #29a09f !important;
+            scrollbar-3dlight-color: #29a09f !important;
+            scrollbar-highlight-color: #29a09f !important;
+            scrollbar-shadow-color: #29a09f !important;
+            scrollbar-darkshadow-color: #29a09f !important;
+            scrollbar-track-color: #ccc !important;
+            scrollbar-base-color:#fff !important;
+
+        }
+        .thead{
+            border-radius: 10px !important;
+            behavior: url(css/ie-css3.htc) !important;
+            scrollbar-arrow-color: #fff !important;
+            scrollbar-face-color: #fff !important;
+            scrollbar-3dlight-color: #fff !important;
+            scrollbar-highlight-color: #fff !important;
+            scrollbar-shadow-color: #fff !important;
+            scrollbar-darkshadow-color: #fff !important;
+            scrollbar-track-color: #fff !important;
+            scrollbar-base-color:#fff !important;
+
+        }
+        .delbtn{
+            color: red !important;
+            text-decoration: underline;
+        }
+        .addDomTable{
+            text-align: center;
+            border: 1px dotted #29a09f;
+            color: #29a09f;
+            margin-top: 5px;
+            border-radius:5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="lf">
+            <ul>
+                <li>全院</li>
+                <li>&nbsp;/&nbsp;</li>
+                <li>信息科</li>
+                <li>&nbsp;/&nbsp;</li>
+                <li>工程师</li>
+            </ul>
+        </div>
+        <div class="rg">
+            <ul>
+                <li><img src="img/userPicture.png" />&nbsp;小兔子</li>
+                <li id="exit">&nbsp;<img src="img/close.png" />&nbsp;退出登录</li>
+            </ul>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li class="col-md-1 col-lg-1 col-xs-1"><img src="img/mzyw.png">&nbsp;门诊业务 </li>
+            <li class="col-md-1 col-lg-1 col-xs-1"><img src="img/mzcx.png"/>&nbsp;门诊查询</li>
+            <li class="col-md-1 col-lg-1 col-xs-1"><img src="img/mzgl.png"/>&nbsp;门诊设置</li>
+            <li class="col-md-1 col-lg-1 col-xs-1"><img src="img/srmx.png"/>&nbsp;收入明细</li>
+            <li class="col-md-1 col-lg-1 col-xs-1"><img src="img/yjgl.png"/>&nbsp;医技管理</li>
+            <li class="col-md-1 col-lg-1 col-xs-1"><img src="img/yjcx.png"/>&nbsp;医技查询</li>
+            <li class="col-md-1 col-lg-1 col-xs-1"><img src="img/srmx.png"/>&nbsp;收入明细</li>
+            <li class="col-md-1 col-lg-1 col-xs-1"><img src="img/yjgl.png"/>&nbsp;医技管理</li>
+            <li class="col-md-1 col-lg-1 col-xs-1"><img src="img/yjcx.png"/>&nbsp;医技查询</li>
+            <li class="col-md-1 col-lg-1 col-xs-1"><img src="img/srmx.png"/>&nbsp;收入明细</li>
+            <li class="col-md-1 col-lg-1 col-xs-1"><img src="img/yjgl.png"/>&nbsp;医技管理</li>
+            <li class="col-md-1 col-lg-1 col-xs-1"><img src="img/yjcx.png"/>&nbsp;医技查询<img src="img/downDir.png" class="dd"/></li>
+        </ul>
+    </nav>
+    <div id="menulist">
+        <ul>
+            <li class="menu1">门诊业务</li>
+            <li>&nbsp;/&nbsp;</li>
+            <li class="menu2">门诊医师</li>
+            <li>&nbsp;/&nbsp;</li>
+            <li class="menu3">患者接诊</li>
+        </ul>
+    </div>
+    <div>
+        <div class="col-lg-2 col-md-2 col-xs-2" id="lft">
+            <div class="menutop">
+                <p class="hzlr">
+                    <span>患者录入</span>
+                </p>
+                <p>
+                   <span>
+                       <span id="parent1">
+                           <select name="jzkh" id="jzkh"  class="jzkh">
+                                <option value="">就诊卡号</option>
+                                <option value="">就诊卡号1</option>
+                            </select>
+                        </span>
+                    </span>
+                    <span>
+                      <input type="text" id="jzkhvalue"  name="jzkhvalue"/>
+                    </span>
+                </p>
+                <p>
+                    <button id="lr">录入</button>
+                    <button id="cz">重置</button>
+                </p>
+            </div>
+            <div class="menubottom">
+                <p class="hzjh">
+                    <span>患者叫号&nbsp;<span class="jzsy">(剩余接诊<b class="hznum">0</b>位)</span></span>
+                </p>
+                <p>
+                    <span class="jzState" id="jzTab">
+                        待接诊
+                    </span>
+                    <span class="jzState" id="yjzTab">
+                        已接诊
+                    </span>
+                </p>
+                <div id="jhlist">
+                    <div>
+                        <p>
+                            <span class="jzhState">
+                                序号:<b>001</b>
+                            </span>
+                            <span class="jzhState">
+                                门诊号:<b>0100002</b>
+                            </span>
+                        </p>
+                        <p>
+                            <span class="jzhState">
+                                姓名:<b>电脑</b>
+                            </span>
+                            <span class="jzhState">
+                                编&nbsp;号:<b>00112124</b>
+                            </span>
+                        </p>
+                        <p>
+                            <span class="jzhState" >
+                               操作时间:2019-03-03<br/>
+		<span style="margin-left:34%;margin-right:34%;">上午11:30</span>
+                            </span>
+                        </p>
+                        <p>
+                            <span id="jhDone" class="jhDone">
+                                叫号
+                            </span>
+                            <span id="jzDone" class="jzDone">
+                                接诊
+                            </span>
+                        </p>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-10 col-md-10 col-xs-10" id="rgt">
+            <div>
+            <ul class="rgtmenu">
+                <li class="rgtlist"><img src="img/djfz.png">单据复制 </li>
+                <li class="rgtlist"><img src="img/bcbtj.png"/>保存并提交</li>
+                <li class="rgtlist"><img src="img/zd.png"/>诊断</li>
+                <li class="rgtlist"><img src="img/zz.png"/>转诊</li>
+                <li class="rgtlist"><img src="img/qxzz.png"/>取消转诊</li>
+                <li class="rgtlist"><img src="img/wcjz.png"/>完成接诊</li>
+                <li class="rgtlist" onkeypress="dy()"><img src="img/dy.png"/>打印[G]</li>
+            </ul>
+            <ul class="hzxx" id="hzinfo1">
+                <li class="hzlist col-lg-2 col-md-2 col-xs-2"><b>患者编号：</b>000111</li>
+                <li class="hzlist col-lg-2 col-md-2 col-xs-2"><b>姓    名：</b>电脑</li>
+                <li class="hzlist col-lg-2 col-md-2 col-xs-2"><b>性    别：</b>女</li>
+                <li class="hzlist col-lg-2 col-md-2 col-xs-2"><b>年    龄：</b>21岁</li>
+                <li class="hzlist col-lg-2 col-md-2 col-xs-2"><b>医疗类型：</b>现金自费</li>
+                <li class="hzlist col-lg-2 col-md-2 col-xs-2"><b>转 诊 号：</b>111</li>
+            </ul>
+            <ul class="hzxx" id="hzinfo2">
+                <li class="hzlist col-lg-2 col-md-2 col-xs-2"><span><b style="display:inline-block;width: 150px;white-space:nowrap;overflow: hidden;text-overflow: ellipsis;" title="谢谢寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻xxxxxxx">家庭地址：谢谢寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻寻xxxxxxx</b></span></li>
+                <li class="hzlist col-lg-2 col-md-2 col-xs-2"><b>接诊号：</b>0012</li>
+                <li class="hzlist col-lg-2 col-md-2 col-xs-2"><b>门诊号：</b>3325</li>
+                <li class="hzlist col-lg-2 col-md-2 col-xs-2"><b>可用余额：</b>19.25</li>
+                <li class="hzlist col-lg-2 col-md-2 col-xs-2"><b>实际余额：</b>19.25</li>
+                <li class="hzlist col-lg-2 col-md-2 col-xs-2"><b>身份证号：</b>120120152</li>
+            </ul>
+           </div>
+            <div style="clear: both;white-space: nowrap">
+                 <span class="menuypState col-lg-1 col-md-1 col-xs-1" id="xcyTab">
+                    西成药
+                 </span>
+                 <span class="menuypState col-lg-1 col-md-1 col-xs-1" id="zyTab">
+                    中药
+                 </span>
+                 <span class="menuypState col-lg-1 col-md-1 col-xs-1" id="jcTab">
+                    检查
+                 </span>
+                 <span class="menuypState col-lg-1 col-md-1 col-xs-1" id="jyTab">
+                    检验
+                 </span>
+                 <span class="menuypState col-lg-1 col-md-1 col-xs-1" id="czTab">
+                    处置
+                 </span>
+                 <span class="menuypState col-lg-1 col-md-1 col-xs-1" id="mzblTab">
+                    门诊病历
+                 </span>
+                 <span class="col-lg-4 col-md-4 col-xs-4" id="hjlist" >
+                     <span>
+                         <label>应收合计：</label><b>119.95</b>
+                     </span>
+                     <span>
+                         <label>优惠合计：</label><b>119.95</b>
+                     </span>
+                     <span>
+                         <label>实收合计：</label><b>119.95</b>
+                     </span>
+                 </span>
+            </div>
+            <ul>
+                <li class="col-md-9 col-xs-9 col-lg-9" >
+                    <p class="btnbc">
+                        <button id="bcbtjbtn">保存并提交</button>
+                        <button id="dybtn">打印</button>
+                        <button id="scxdcfbtn">生成协定处方</button>
+                        <button id="cxbtn">撤销</button>
+                    </p>
+                    <p class="cfType">
+                        <span><input type="checkbox" style="margin-right: 6px" id="jzcfhl"/><label for="jzcfhl">急诊处方号类</label></span>
+                        <span><input type="checkbox" style="margin-right: 6px" id="mxb"/><label for="mxb">慢性病</label></span>
+                        <span><input type="checkbox" style="margin-right: 6px" id="lnb"/><label for="lnb">老年病</label></span>
+                        <span><input type="checkbox" style="margin-right: 6px" id="xecf"/><label for="xecf">小儿处方</label></span>
+                        <span><input type="checkbox" style="margin-right: 6px" id="dmjcf"/><label for="dmjcf">毒麻精处方</label></span>
+                        <span><label>【毒麻精类型】</label><span id="parent"><select name="" id="dmj"><option>ss</option><option>ss1</option></select></span></span>
+                    </p>
+                    <p class="cfType">
+                        <span><label>取药药房</label><span id="parent"><select name="" id="qyyf"><option>ss</option><option>ss1</option></select></span></span>
+                        <span><label>处方类型</label><span id="parent"><select name="" id="cflx"><option>ss</option><option>ss1</option></select></span></span>
+                        <span><label>天数</label><span id="parent"><select name="" id="ts"><option>ss</option><option>ss1</option></select></span></span>
+                    </p>
+                    <p>
+                        <div class="thead">
+                            <div>序号</div>
+                            <div>药品名称</div>
+                            <div>剂量</div>
+                            <div>剂量单位</div>
+                            <div>规格</div>
+                            <div>给药方式</div>
+                            <div>给药频率</div>
+                            <div>天数</div>
+                            <div>数量</div>
+                            <div>可用库存</div>
+                            <div>单位</div>
+                            <div>单价</div>
+                            <div>医师嘱咐</div>
+                            <div>操作</div>
+                        </div>
+                        <div class="tbody">
+
+
+                        </div>
+                        <p class="addDomTable">
+                            添加
+                        </p>
+                    </p>
+                </li>
+                <li class="col-md-1 col-xs-1 col-lg-1" style="padding-left: 20px;">
+                    <p class="cflabel">
+                        处方
+                    </p>
+                    <div id="cflist">
+                        <div>
+                            <p>
+                            <span class="jzhState">
+                                序号：<b>001</b>
+                            </span>
+                            <span class="jzhState">
+                                状态：<b>待提交</b>
+                            </span>
+                            </p>
+                            <p>
+                            <span class="jzhState">
+                               处方号：<b>102301546</b>
+                            </span>
+                            </p>
+                            <p>
+                            <span class="jzhState">
+                               操作时间：2019-03-03&nbsp;上午11:30
+                            </span>
+                            </p>
+                            <p>
+                            <span id="tjDone">
+                                提交
+                            </span>
+                            <span id="deleteDone">
+                                删除处方
+                            </span>
+                            </p>
+                        </div>
+                     </div>
+                </li>
+            </ul>
+
+
+        </div>
+    </div>
+    <script src="js/vue.js"></script>
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript" src="exportJs/exportTable.js"></script>
+    <script src="exportJs/FileSaver.js"></script>
+    <script src="exportJs/tableExport.min.js"></script>
+    <script src="js/mod.udatas.js"></script>
+    <script type="text/javascript" src="js/bootstrap-table.js"></script>
+    <script type="text/javascript" src="js/bootstrap-table-fixed-columns.js"></script>
+    <script>
+        var num=0;
+        for(var i=0;i<10;i++){
+            $('.tbody').append(`
+                <div>
+                    <div>${i+1}</div>
+                    <div>阿莫西林</div>
+                    <div>0.1</div>
+                    <div>克</div>
+                    <div>0.1克</div>
+                    <div>静脉注射</div>
+                    <div>一天一次</div>
+                    <div>22</div>
+                    <div>22</div>
+                    <div>122</div>
+                    <div>支</div>
+                    <div>2.00</div>
+                    <div>忌辣</div>
+                    <div><a  class="delbtn">删除</a></div>
+                </div>
+            `)
+        }
+
+
+
+
+        $('.jhDone').click(function(){
+            var jhtxt = $(this).text();
+            jhtxt = jhtxt.replace(/\s*/g,"");
+            if(jhtxt === "叫号"){
+                $(this).text('取消叫号');
+                $(this).css('color','#666');
+            }else{
+                $(this).text('叫号');
+                $(this).css('color','#29a09f');
+            }
+        })
+
+
+        var vheight = window.screen.height;
+
+        $('#jhlist').css('height',vheight-240-275);
+        $('#cflist').css('height',vheight-240-285);
+
+
+        $('.jzState').click(function(){
+            $(this).css({
+                borderTop: '4px solid #29a09f',
+                borderBottom: '1px solid transparent',
+                borderRight: '1px solid #dfdfdf',
+                background: '#fff',
+                color:'#29a09f'
+            })
+            $(this).siblings().css({
+                border: '1px solid #dfdfdf',
+                borderTop: '4px solid transparent',
+                backgroundColor: '#FAFAFA',
+                color:'#333'
+            })
+        })
+
+
+        document.onkeydown=function(event){
+            var event=event||window.event;
+            if(event.keyCode == 71){
+                alert("打印")
+            };
+        };
+
+
+        $('.menuypState').click(function(){
+          $(this).css({
+              borderTop: '4px solid #29a09f',
+              borderBottom: '1px solid transparent',
+              borderRight: '1px solid #dfdfdf',
+              background: '#fff',
+              color:'#29a09f'
+          })
+          $(this).siblings().css({
+              border: '1px solid #dfdfdf',
+              borderTop: '4px solid transparent',
+              backgroundColor: '#FAFAFA',
+              color:'#333'
+          })
+      })
+        if($('.tbody').children().size()>6){
+            $('.thead').css('overflow-y','scroll');
+            $('.tbody').css('overflow-y','scroll');
+        }else{
+            $('.thead').css('overflow-y','hidden');
+            $('.tbody').css('overflow-y','hidden');
+        }
+
+        /********删除报表某段数据*******/
+     $(document).on('click','.delbtn',function(){
+         if($('.tbody').children().size()>7){
+           $('.thead').css('overflow-y','scroll');
+           $('.tbody').css('overflow-y','scroll');
+         }else{
+             $('.thead').css('overflow-y','hidden');
+             $('.tbody').css('overflow-y','hidden');
+         }
+         $(this).parent().parent().remove();
+     })
+        /******添加报表数据*******/
+
+        num = $('.tbody').children().size();
+        $('.addDomTable').click(function(){
+            num +=1;
+                $('.tbody').append(`
+                    <div>
+                    <div>${num}</div>
+                    <div>阿莫西林</div>
+                    <div>0.1</div>
+                    <div>克</div>
+                    <div>0.1克</div>
+                    <div>静脉注射</div>
+                    <div>一天一次</div>
+                    <div>22</div>
+                    <div>22</div>
+                    <div>122</div>
+                    <div>支</div>
+                    <div>2.00</div>
+                    <div>忌辣</div>
+                    <div><a  class="delbtn">删除</a></div>
+                    </div>
+            `)
+
+        })
+
+
+
+
+    </script>
+</body>
+</html>

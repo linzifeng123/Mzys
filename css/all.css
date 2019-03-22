@@ -1,0 +1,200 @@
+
+select,a,input[type=date],input[type=month],input[type=number],input[type=radio],label[for]{
+	cursor:pointer !important;
+}
+.laydate_yms ul li {
+    float: left;
+    width: 40px !important;
+    height: 20px;
+    line-height: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-left:10px !important;
+}
+.laydate_yms ul li:nth-child(even){
+	position:relative !important;
+	left:5px;
+}
+.fixed-table-toolbar{
+	display:none !important;
+}
+.dateCheck{
+  margin-top:5px !important;
+}
+.laydate_box{
+	position:relative;
+	top:35px !important;
+}
+#tb_user1,.bootstrap-table{
+	display:none !important;
+}
+.bootstrap-table:nth-of-type(1){
+	display:block !important;
+}
+  #firstDate,#lastDate,#sfDate{
+	       font-size:1.6rem !important;
+	    }
+	    #firstDate1,#lastDate1{
+	       font-size:1.6rem !important;
+	    } 
+
+        #test_table{
+           background-color:#fff;
+           color:#fff;
+           border:transparent;
+           position:absolute;
+           top:830px;
+        }
+        #test_table>thead,#test_table>tbody{
+           background-color:#fff;
+        }
+        
+           /****************table****************/
+           .datetimepicker>div>table>thead{
+             background-color:#fff !important;
+           }
+         .datetimepicker>div>table>thead>tr>th, .datetimepicker>div>table>tbody>tr>td{
+             border:transparent !important;
+           }
+           .fixed-table-toolbar{
+            display:none;
+           }
+
+        .tbTitle{
+          font-size:2rem;
+        }
+       .dropdown-toggle{
+         display:none;
+       }
+   .fixed-table-container{
+       height:23rem !important;
+       
+    }
+    .fixed-table-pagination div.pagination, .fixed-table-pagination .pagination-detail{
+       margin-top:5px !important;
+    }
+    .fixed-table-body::-webkit-scrollbar {
+        width: 10px;    
+        height: 10px;
+        color: #29a09f;
+    }
+    .fixed-table-body::-webkit-scrollbar-thumb {
+        height: 4px;
+        width: 4px;
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        background-color: #29a09f;
+    }
+    .fixed-table-body::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+        border-radius: 0;
+        background: rgba(0,0,0,0.1);
+    }
+   
+   .fixed-table-body{
+        border-radius: 10px !important;
+        behavior: url(ie-css3.htc) !important;
+        scrollbar-arrow-color: #29a09f !important;
+		scrollbar-face-color: #29a09f !important;
+		scrollbar-3dlight-color: #29a09f !important;
+		scrollbar-highlight-color: #29a09f !important;
+		scrollbar-shadow-color: #29a09f !important;
+		scrollbar-darkshadow-color: #29a09f !important;
+		scrollbar-track-color: #ccc !important;
+		scrollbar-base-color:#fff !important;
+  }
+
+
+#left_table2 th{
+    text-align:center;
+}
+#right_div{
+    float: left;
+
+}
+
+#right_div1{
+    overflow: scroll;
+    overflow-x: hidden;
+}
+#right_div2{
+    margin-top:-20px;
+    width:100%;
+    height:400px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+#right_table1{
+    width: 100%;
+}
+#right_table2{
+    /**width和max-width一起写，手机浏览器打开也能固定长度**/
+    width: 100%;
+    max-width: 100%;
+    white-space:nowrap;
+}
+
+#right_div1::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    color: #29a09f;
+}
+#right_div1::-webkit-scrollbar-thumb {
+    height: 4px;
+    width: 4px;
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #29a09f;
+}
+#right_div1::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.0);
+    border-radius: 0;
+    background: rgba(0,0,0,0.1);
+}
+
+#right_div1{
+    border-radius: 10px !important;
+    behavior: url(ie-css3.htc) !important;
+    scrollbar-arrow-color: #ccc !important;
+    scrollbar-face-color: #ccc !important;
+    scrollbar-3dlight-color: #ccc !important;
+    scrollbar-highlight-color: #ccc !important;
+    scrollbar-shadow-color: #ccc !important;
+    scrollbar-darkshadow-color: #ccc !important;
+    scrollbar-track-color: #ccc !important;
+    scrollbar-base-color:#fff !important;
+}
+
+
+
+#right_div2::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    color: #29a09f;
+}
+#right_div2::-webkit-scrollbar-thumb {
+    height: 4px;
+    width: 4px;
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #29a09f;
+}
+#right_div2::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    border-radius: 0;
+    background: rgba(0,0,0,0.1);
+}
+
+#right_div2{
+    border-radius: 10px !important;
+    behavior: url(ie-css3.htc) !important;
+    scrollbar-arrow-color: #29a09f !important;
+    scrollbar-face-color: #29a09f !important;
+    scrollbar-3dlight-color: #29a09f !important;
+    scrollbar-highlight-color: #29a09f !important;
+    scrollbar-shadow-color: #29a09f !important;
+    scrollbar-darkshadow-color: #29a09f !important;
+    scrollbar-track-color: #ccc !important;
+    scrollbar-base-color:#fff !important;
+}
