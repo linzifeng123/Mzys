@@ -10,23 +10,22 @@
     <link href="css/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap-table.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap-table-fixed-columnsa.css">
+    <link rel="stylesheet" href="css/ie-css3.htc"/>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lte IE 9]>
     <script src="js/respond.min.js"></script>
     <script src="js/html5shiv.min.js"></script>
     <script src="js/rem.js"></script>
-    <link rel="stylesheet" href="css/ie-css3.htc"/>
+
     <![endif]-->
     <style>
-        body,html{
+        body{
             height:100%;
             overflow-y: auto;
         }
         body{
             padding:0;
             margin:0;
-
-
             width: 100%;
             height: auto;
             min-width: 1200px;
@@ -70,7 +69,7 @@
         .rg{
             float: right;
             color: #29a09f;
-            padding-right:17px;
+            left:-30px;
             position: relative;
         }
         .rg ul>li{
@@ -83,16 +82,45 @@
 
         }
         /***导航栏***/
+        #headers{
+           position: absolute;
+            margin: 0 auto;
+            z-index: 5;
+            top: 0;
+        }
         nav{
             margin:0 auto;
             height: 40px;
             line-height: 40px;
-            background-color: #29a09f;
+            background-color: #29a09f !important;
             margin-top: -10px;
+            white-space: nowrap !important;
+            position: relative;
         }
+        #menus{
+            display: none;
+            margin-bottom: -300px;
+            z-index: 4;
+        }
+        .menutwo{
+            margin:0 auto;
+            height: 40px;
+            line-height: 40px;
+            background-color: #29a09f !important;
+            margin-top: -10px;
+            white-space: nowrap !important;
+        }
+
+        .menutwo>ul>li{
+            float: left;
+            left: -23px;
+            color: #fff;
+            white-space: nowrap !important;
+            cursor: pointer;
+        }
+
         nav ul>li{
             float: left;
-            position: relative;
             left: -23px;
             color: #fff;
             white-space: nowrap !important;
@@ -104,13 +132,15 @@
         }
         /***菜单导航***/
         #menulist{
+
             clear: both;
             margin:0 auto;
             height: 30px;
             line-height: 10px;
             background-color: #fff;
-
+            margin-top:100px;
             border-bottom: 10px solid #f0f2f5;
+
         }
         #menulist ul>li{
             float: left;
@@ -394,9 +424,12 @@
         /**************保存提交打印等**************/
         .btnbc{
             clear: both;
-            white-space: nowrap;
             padding-top: 10px;
-            margin-bottom: 14px;
+            margin-bottom:14px;
+        }
+        .btnbc>button{
+            text-align: center!important;
+
         }
         #bcbtjbtn{
             width: 130px;
@@ -404,9 +437,6 @@
             background-color: #29a09f;
             color: #fff;
             border: transparent;
-            border-radius: 3px;
-
-
         }
         #dybtn{
             width: 90px;
@@ -414,7 +444,6 @@
             background-color: #29a09f;
             color: #fff;
             border: transparent;
-            border-radius: 3px;
             margin-left: 20px;
 
         }
@@ -424,7 +453,6 @@
             background-color: #29a09f;
             color: #fff;
             border: transparent;
-            border-radius: 3px;
             margin-left: 20px;
 
         }
@@ -435,7 +463,7 @@
             background-color: #7dc9c9;
             color: #fff;
             border: transparent;
-            border-radius: 3px;
+
             margin-right: 30px;
 
         }
@@ -453,7 +481,6 @@
         #cflist{
             position: relative;
             top:-10px;
-            height: 44px;
             background-color: #ffffff !important;
             width: 220px;
             padding-left: 1px;
@@ -471,8 +498,12 @@
             border-top: 1px solid #dfdfdf;
 
         }
-        #cflist>div>p{
-            margin-top: 14px;
+        .view{
+            padding-top: 8px;
+            padding-bottom: 3px;
+        }
+        .view+div{
+            margin-top: -1px;
         }
         /*******提交删除处方********/
         #tjDone,#deleteDone{
@@ -498,6 +529,10 @@
             color: #666;
         }
         /********处方类型复选***********/
+        .cfType{
+            clear: both;
+            margin-top: 10px !important;
+        }
         .cfType>span:not(:first-child){
             margin-left: 20px;
         }
@@ -561,6 +596,7 @@
             cursor: pointer;
             font-size: 0.9rem;
             border-radius: 3px;
+            border-radius: transparent\9 !important;
             background-color: #ffffff\9;
         }
 
@@ -568,23 +604,23 @@
             -webkit-appearance:none;
             -moz-appearance:none;
             appearance:none;
+            background:transparent;
             border:none;
-            background: transparent;
-            width: 120%;
-            margin-top: -10px\9;
+            padding-left:10px;
+            width: 130%;
+            margin-top: 5px;
         }
 
         /********报表********/
         table{
             border: 1px solid #dfdfdf;
+            border-bottom: transparent;
         }
         thead{
             background-color: #FAFAFA;
             border-bottom: transparent;
         }
-        thead>tr>th:last-child,tbody>tr>td:last-child{
-            border-left: 1px solid #dfdfdf;
-        }
+
         td{
             color: #666666;
             font-size: 0.9rem;
@@ -595,72 +631,58 @@
             font-size: 0.9rem;
         }
 
-        th,td{
 
+        th,td{
             width: 100px;
+            text-align: center;
         }
         input[type=checkbox]{
             color: red !important;
         }
-        .thead>div{
-            display: inline-table;
-            width: 7.2%;
-            border: 1px solid #dfdfdf;
-            margin-left: -4.5px;
-            height: 30px;
-            text-align: center;
-            line-height: 30px;
-            font-size: 0.9rem;
-        }
+
         .thead{
-            padding-left: 10px;
             overflow: hidden;
-            overflow-y: scroll;
             background-color: #FAFAFA;
         }
         .tbody{
-            
             overflow: hidden;
-            overflow-y: scroll;
-            padding-left: 10px;
-        }
-        .tbody>div>div{
-            display:  inline-table;
-            width: 7.2%;
+            background-color: #fff;
             border: 1px solid #dfdfdf;
-            margin-left: -4.5px;
-            text-align: center;
-            height: 30px;
-            line-height: 30px;
-            font-size: 0.9rem;
-            margin-top: -1px;
         }
+
         .thead::-webkit-scrollbar {
             width: 10px;
             height: 10px;
             color: #fff;
         }
+
+
+
+
+
         .tbody::-webkit-scrollbar {
             width: 10px;
             height: 10px;
             color: #29a09f;
+            -moz-color: #29a09f;
         }
+
         .tbody::-webkit-scrollbar-thumb {
             height: 4px;
-            width: 0px;
-            border-radius: 10px;
+
             -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
             background-color: #29a09f;
         }
+
+
+
         .tbody::-webkit-scrollbar-track {
             -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
-            border-radius: 0;
+
             background: rgba(0,0,0,0.1);
         }
 
         .tbody{
-            border-radius: 10px !important;
-            behavior: url(css/ie-css3.htc) !important;
             scrollbar-arrow-color: #29a09f !important;
             scrollbar-face-color: #29a09f !important;
             scrollbar-3dlight-color: #29a09f !important;
@@ -672,8 +694,6 @@
 
         }
         .thead{
-            border-radius: 10px !important;
-            behavior: url(css/ie-css3.htc) !important;
             scrollbar-arrow-color: #fff !important;
             scrollbar-face-color: #fff !important;
             scrollbar-3dlight-color: #fff !important;
@@ -692,13 +712,42 @@
             text-align: center;
             border: 1px dotted #29a09f;
             color: #29a09f;
-            margin-top: 5px;
+            margin-top: 15px;
             border-radius:5px;
             cursor: pointer;
+            background-color: #fff;
+        }
+
+
+        /***菜单下拉***/
+        .menuDrop{
+            position: absolute;
+            z-index: 5;
+            width: 80%;
+            display: none;
+            top:30px
+        }
+        .menuDrop>ul{
+           position:absolute;
+            width: 100%;
+            background-color: #fff;
+            border: 1px solid #dfdfdf;
+            padding-bottom: 15px;
+            cursor: default;
+        }
+        .menuDrop>ul>li{
+            color: #333 !important;
+            height: 20px;
+            cursor: pointer;
+
+        }
+        .menuDrop:hover ul>li{
+            color: #29a09f !important;
         }
     </style>
 </head>
 <body>
+    <div id="headers">
     <header>
         <div class="lf">
             <ul>
@@ -718,20 +767,178 @@
     </header>
     <nav>
         <ul>
-            <li class="col-md-1 col-lg-1 col-xs-1"><img src="img/mzyw.png">&nbsp;门诊业务 </li>
-            <li class="col-md-1 col-lg-1 col-xs-1"><img src="img/mzcx.png"/>&nbsp;门诊查询</li>
-            <li class="col-md-1 col-lg-1 col-xs-1"><img src="img/mzgl.png"/>&nbsp;门诊设置</li>
-            <li class="col-md-1 col-lg-1 col-xs-1"><img src="img/srmx.png"/>&nbsp;收入明细</li>
-            <li class="col-md-1 col-lg-1 col-xs-1"><img src="img/yjgl.png"/>&nbsp;医技管理</li>
-            <li class="col-md-1 col-lg-1 col-xs-1"><img src="img/yjcx.png"/>&nbsp;医技查询</li>
-            <li class="col-md-1 col-lg-1 col-xs-1"><img src="img/srmx.png"/>&nbsp;收入明细</li>
-            <li class="col-md-1 col-lg-1 col-xs-1"><img src="img/yjgl.png"/>&nbsp;医技管理</li>
-            <li class="col-md-1 col-lg-1 col-xs-1"><img src="img/yjcx.png"/>&nbsp;医技查询</li>
-            <li class="col-md-1 col-lg-1 col-xs-1"><img src="img/srmx.png"/>&nbsp;收入明细</li>
-            <li class="col-md-1 col-lg-1 col-xs-1"><img src="img/yjgl.png"/>&nbsp;医技管理</li>
-            <li class="col-md-1 col-lg-1 col-xs-1"><img src="img/yjcx.png"/>&nbsp;医技查询<img src="img/downDir.png" class="dd"/></li>
+            <li class="col-md-1 col-lg-1 col-xs-1 dropdownMenu"><img src="img/mzyw.png">&nbsp;门诊业务
+                <div class="menuDrop" alt="0">
+                    <ul>
+                        <li>1</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="col-md-1 col-lg-1 col-xs-1 dropdownMenu"><img src="img/mzcx.png"/>&nbsp;门诊查询
+                <div class="menuDrop" alt="0">
+                    <ul>
+                        <li>2</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="col-md-1 col-lg-1 col-xs-1 dropdownMenu"><img src="img/mzgl.png"/>&nbsp;门诊设置
+                <div class="menuDrop" alt="0">
+                    <ul>
+                        <li>3</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="col-md-1 col-lg-1 col-xs-1 dropdownMenu"><img src="img/srmx.png"/>&nbsp;收入明细
+                <div class="menuDrop" alt="0">
+                    <ul>
+                        <li>4</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="col-md-1 col-lg-1 col-xs-1 dropdownMenu"><img src="img/yjgl.png"/>&nbsp;医技管理
+                <div class="menuDrop" alt="0">
+                    <ul>
+                        <li>5</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="col-md-1 col-lg-1 col-xs-1 dropdownMenu"><img src="img/yjcx.png"/>&nbsp;医技查询
+                <div class="menuDrop" alt="0">
+                    <ul>
+                        <li>6</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="col-md-1 col-lg-1 col-xs-1 dropdownMenu"><img src="img/srmx.png"/>&nbsp;收入明细
+                <div class="menuDrop" alt="0">
+                    <ul>
+                        <li>7</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="col-md-1 col-lg-1 col-xs-1 dropdownMenu"><img src="img/yjgl.png"/>&nbsp;医技管理
+                <div class="menuDrop" alt="0">
+                    <ul>
+                        <li>8</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="col-md-1 col-lg-1 col-xs-1 dropdownMenu"><img src="img/yjcx.png"/>&nbsp;医技查询
+                <div class="menuDrop" alt="0">
+                    <ul>
+                        <li>9</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="col-md-1 col-lg-1 col-xs-1 dropdownMenu"><img src="img/srmx.png"/>&nbsp;收入明细
+                <div class="menuDrop" alt="0">
+                    <ul>
+                        <li>10</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="col-md-1 col-lg-1 col-xs-1 dropdownMenu"><img src="img/yjgl.png"/>&nbsp;医技管理
+                <div class="menuDrop" alt="0">
+                    <ul>
+                        <li>11</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="col-md-1 col-lg-1 col-xs-1 dropdownMenu"><img src="img/yjcx.png"/>&nbsp;医技查询
+                <div class="menuDrop" alt="0">
+                    <ul>
+                        <li>12</li>
+                    </ul>
+                </div>
+                <img src="img/downDir.png" class="dd" alt="hide"/>
+            </li>
         </ul>
     </nav>
+    <div id="menus">
+        <div class="menutwo">
+            <ul>
+                <li class="col-md-1 col-lg-1 col-xs-1 dropdownMenu"><img src="img/mzyw.png">&nbsp;门诊业务
+                    <div class="menuDrop" alt="0">
+                        <ul>
+                            <li>1</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="col-md-1 col-lg-1 col-xs-1 dropdownMenu"><img src="img/mzcx.png"/>&nbsp;门诊查询
+                    <div class="menuDrop" alt="0">
+                        <ul>
+                            <li>2</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="col-md-1 col-lg-1 col-xs-1 dropdownMenu"><img src="img/mzgl.png"/>&nbsp;门诊设置
+                    <div class="menuDrop" alt="0">
+                        <ul>
+                            <li>3</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="col-md-1 col-lg-1 col-xs-1 dropdownMenu"><img src="img/srmx.png"/>&nbsp;收入明细
+                    <div class="menuDrop" alt="0">
+                        <ul>
+                            <li>4</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="col-md-1 col-lg-1 col-xs-1 dropdownMenu"><img src="img/yjgl.png"/>&nbsp;医技管理
+                    <div class="menuDrop" alt="0">
+                        <ul>
+                            <li>5</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="col-md-1 col-lg-1 col-xs-1 dropdownMenu"><img src="img/yjcx.png"/>&nbsp;医技查询
+                    <div class="menuDrop" alt="0">
+                        <ul>
+                            <li>6</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="col-md-1 col-lg-1 col-xs-1 dropdownMenu"><img src="img/srmx.png"/>&nbsp;收入明细
+                    <div class="menuDrop" alt="0">
+                        <ul>
+                            <li>7</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="col-md-1 col-lg-1 col-xs-1 dropdownMenu"><img src="img/yjgl.png"/>&nbsp;医技管理
+                    <div class="menuDrop" alt="0">
+                        <ul>
+                            <li>8</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="col-md-1 col-lg-1 col-xs-1 dropdownMenu"><img src="img/yjcx.png"/>&nbsp;医技查询
+                    <div class="menuDrop" alt="0">
+                        <ul>
+                            <li>9</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="col-md-1 col-lg-1 col-xs-1 dropdownMenu"><img src="img/srmx.png"/>&nbsp;收入明细
+                    <div class="menuDrop" alt="0">
+                        <ul>
+                            <li>10</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="col-md-1 col-lg-1 col-xs-1 dropdownMenu"><img src="img/yjgl.png"/>&nbsp;医技管理
+                    <div class="menuDrop" alt="0">
+                        <ul>
+                            <li>11</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
     <div id="menulist">
         <ul>
             <li class="menu1">门诊业务</li>
@@ -748,9 +955,10 @@
                     <span>患者录入</span>
                 </p>
                 <p>
-                   <span>
-                       <span id="parent1">
-                           <select name="jzkh" id="jzkh"  class="jzkh">
+
+                    <span>
+                        <span id="parent1">
+                            <select >
                                 <option value="">就诊卡号</option>
                                 <option value="">就诊卡号1</option>
                             </select>
@@ -810,8 +1018,6 @@
                             </span>
                         </p>
                     </div>
-
-
                 </div>
             </div>
         </div>
@@ -890,31 +1096,37 @@
                         <span><input type="checkbox" style="margin-right: 6px" id="dmjcf"/><label for="dmjcf">毒麻精处方</label></span>
                         <span><label>【毒麻精类型】</label><span id="parent"><select name="" id="dmj"><option>ss</option><option>ss1</option></select></span></span>
                     </p>
-                    <p class="cfType">
+                    <p >
                         <span><label>取药药房</label><span id="parent"><select name="" id="qyyf"><option>ss</option><option>ss1</option></select></span></span>
                         <span><label>处方类型</label><span id="parent"><select name="" id="cflx"><option>ss</option><option>ss1</option></select></span></span>
                         <span><label>天数</label><span id="parent"><select name="" id="ts"><option>ss</option><option>ss1</option></select></span></span>
                     </p>
                     <p>
                         <div class="thead">
-                            <div>序号</div>
-                            <div>药品名称</div>
-                            <div>剂量</div>
-                            <div>剂量单位</div>
-                            <div>规格</div>
-                            <div>给药方式</div>
-                            <div>给药频率</div>
-                            <div>天数</div>
-                            <div>数量</div>
-                            <div>可用库存</div>
-                            <div>单位</div>
-                            <div>单价</div>
-                            <div>医师嘱咐</div>
-                            <div>操作</div>
+                            <table>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>药品名称</th>
+                                    <th>剂量</th>
+                                    <th>剂量单位</th>
+                                    <th>规格</th>
+                                    <th>给药方式</th>
+                                    <th>给药频率</th>
+                                    <th>天数</th>
+                                    <th>数量</th>
+                                    <th>可用库存</th>
+                                    <th>单位</th>
+                                    <th>单价</th>
+                                    <th>医师嘱咐</th>
+                                    <th>操作</th>
+                                </tr>
+                            </table>
+
                         </div>
-                        <div class="tbody">
-
-
+                        <div class="tbody" id="tbodys">
+                            <table>
+                                <tbody  id="tbody"></tbody>
+                            </table>
                         </div>
                         <p class="addDomTable">
                             添加
@@ -926,75 +1138,101 @@
                         处方
                     </p>
                     <div id="cflist">
-                        <div>
-                            <p>
-                            <span class="jzhState">
-                                序号：<b>001</b>
-                            </span>
-                            <span class="jzhState">
-                                状态：<b>待提交</b>
-                            </span>
-                            </p>
-                            <p>
-                            <span class="jzhState">
-                               处方号：<b>102301546</b>
-                            </span>
-                            </p>
-                            <p>
-                            <span class="jzhState">
-                               操作时间：2019-03-03&nbsp;上午11:30
-                            </span>
-                            </p>
-                            <p>
-                            <span id="tjDone">
-                                提交
-                            </span>
-                            <span id="deleteDone">
-                                删除处方
-                            </span>
-                            </p>
+                        <div  class="tjstate">
+                            <div class="view">
+                                <p>
+                                    <span class="jzhState">
+                                        序号：<b>001</b>
+                                    </span>
+                                    <span class="jzhState">
+                                        状态：<b>待提交</b>
+                                    </span>
+                                </p>
+                                <p>
+                                    <span class="jzhState">
+                                       处方号：<b>102301546</b>
+                                    </span>
+                                </p>
+                                <p>
+                                    <span class="jzhState">
+                                       操作时间：2019-03-03&nbsp;上午11:30
+                                    </span>
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    <span id="tjDone">
+                                        提交
+                                    </span>
+                                    <span id="deleteDone">
+                                        删除处方
+                                    </span>
+                                </p>
+                            </div>
                         </div>
                      </div>
                 </li>
             </ul>
-
-
         </div>
     </div>
-    <script src="js/vue.js"></script>
     <script src="js/jquery.js"></script>
     <script type="text/javascript" src="exportJs/exportTable.js"></script>
     <script src="exportJs/FileSaver.js"></script>
     <script src="exportJs/tableExport.min.js"></script>
     <script src="js/mod.udatas.js"></script>
-    <script type="text/javascript" src="js/bootstrap-table.js"></script>
-    <script type="text/javascript" src="js/bootstrap-table-fixed-columns.js"></script>
     <script>
+        if($('nav').children().size() > 1){
+            $('.dd').css('display','block-inline');
+        }
+        $('.dropdownMenu').click(function(){
+            var showState = $(this).children(':nth-child(2)').attr('alt');
+            $('.dropdownMenu').children(':nth-child(2)').animate({height:'hide'},100);
+            $('.dropdownMenu').children(':nth-child(2)').attr('alt','0');
+            if(showState == '0'){
+                $(this).children(':nth-child(2)').animate({height:'show'},100);
+                $(this).children(':nth-child(2)').attr('alt','1');
+
+            }else{
+                $(this).children(':nth-child(2)').animate({height:'hide'},100);
+                $(this).children(':nth-child(2)').attr('alt','0')
+            }
+
+        })
+
+        //主菜单下拉
+        $('.dd').click(function(e){
+            e.stopPropagation();
+            var showState = $(this).attr('alt');
+
+            if(showState == 'hide'){
+                $('#menus').animate({height:'show'},100);
+                $(this).attr('alt','show');
+            }else{
+                $('#menus').animate({height:'hide'},100);
+                $(this).attr('alt','hide');
+            }
+        })
         var num=0;
         for(var i=0;i<10;i++){
-            $('.tbody').append(`
-                <div>
-                    <div>${i+1}</div>
-                    <div>阿莫西林</div>
-                    <div>0.1</div>
-                    <div>克</div>
-                    <div>0.1克</div>
-                    <div>静脉注射</div>
-                    <div>一天一次</div>
-                    <div>22</div>
-                    <div>22</div>
-                    <div>122</div>
-                    <div>支</div>
-                    <div>2.00</div>
-                    <div>忌辣</div>
-                    <div><a  class="delbtn">删除</a></div>
-                </div>
-            `)
+            $('#tbody').append('<tr style="border-bottom: 1px dotted #dfdfdf">'+
+            '<td>'+(i+1)+'</td>'+
+            '<td>阿莫西林</td>'+
+            '<td>0.1</td>'+
+            '<td>克</td>'+
+            '<td>0.1克</td>'+
+            '<td>静脉注射</td>'+
+            '<td>一天一次</td>'+
+            '<td>22</td>'+
+            '<td>22</td>'+
+            '<td>122</td>'+
+            '<td>支</td>'+
+            '<td>2.00</td>'+
+            '<td>忌辣</td>'+
+            '<td><a  class="delbtn">删除</a></td>'+
+            '</tr>')
         }
 
-
-
-
+        //叫号
         $('.jhDone').click(function(){
             var jhtxt = $(this).text();
             jhtxt = jhtxt.replace(/\s*/g,"");
@@ -1008,12 +1246,18 @@
         })
 
 
-        var vheight = window.screen.height;
 
-        $('#jhlist').css('height',vheight-240-275);
-        $('#cflist').css('height',vheight-240-285);
-       $('.tbody').css('height',vheight-660);
+        setInterval(function(){
+            var vheight = window.screen.height;
+            var vwidth = window.screen.width;
+            $('#jhlist').css('height',vheight-240-280+"px");
+            $('#cflist').css('height',vheight-240-290+"px");
+            $('.tbody').css('height',vheight-660+"px");
+            $('body').css('min-width',vwidth+"px");
+            $('#headers').css('min-width',vwidth+"px");
+        },100)
 
+        //接诊
         $('.jzState').click(function(){
             $(this).css({
                 borderTop: '4px solid #29a09f',
@@ -1030,7 +1274,7 @@
             })
         })
 
-
+        //G键打印
         document.onkeydown=function(event){
             var event=event||window.event;
             if(event.keyCode == 71){
@@ -1064,43 +1308,56 @@
 
         /********删除报表某段数据*******/
      $(document).on('click','.delbtn',function(){
-         if($('.tbody').children().size()>7){
-           $('.thead').css('overflow-y','scroll');
-           $('.tbody').css('overflow-y','scroll');
+         $(this).parent().parent().remove();
+
+         if($('#tbody').height()> $('.tbody').height() ){
+             $('.thead').css('overflow-y','scroll');
+             $('.tbody').css('overflow-y','scroll');
          }else{
              $('.thead').css('overflow-y','hidden');
              $('.tbody').css('overflow-y','hidden');
          }
-         $(this).parent().parent().remove();
      })
         /******添加报表数据*******/
 
-        num = $('.tbody').children().size();
+        num = $('#tbody').children().size();
         $('.addDomTable').click(function(){
             num +=1;
-                $('.tbody').append(`
-                    <div>
-                    <div>${num}</div>
-                    <div>阿莫西林</div>
-                    <div>0.1</div>
-                    <div>克</div>
-                    <div>0.1克</div>
-                    <div>静脉注射</div>
-                    <div>一天一次</div>
-                    <div>22</div>
-                    <div>22</div>
-                    <div>122</div>
-                    <div>支</div>
-                    <div>2.00</div>
-                    <div>忌辣</div>
-                    <div><a  class="delbtn">删除</a></div>
-                    </div>
-            `)
+                $('#tbody').append('<tr style="border-bottom: 1px dotted #dfdfdf">'+
+                '<td>'+num+'</td>'+
+                '<td>阿莫西林</td>'+
+                '<td>0.1</td>'+
+                '<td>克</td>'+
+                '<td>0.1克</td>'+
+                '<td>静脉注射</td>'+
+                '<td>一天一次</td>'+
+                '<td>22</td>'+
+                '<td>22</td>'+
+                '<td>122</td>'+
+                '<td>支</td>'+
+                '<td>2.00</td>'+
+                '<td>忌辣</td>'+
+                '<td><a  class="delbtn">删除</a></td>'+
+                '</tr>');
+
+            if($('#tbody').height()> $('.tbody').height() ){
+                $('.thead').css('overflow-y','scroll');
+                $('.tbody').css('overflow-y','scroll');
+            }else{
+                $('.thead').css('overflow-y','hidden');
+                $('.tbody').css('overflow-y','hidden');
+            }
 
         })
 
-
-
+        /*******处方提交******/
+        $('.tjstate').click(function(){
+            $(this).children(':first-child').css({
+                background:'#29a09f',
+                color:'#fff'
+            })
+            $(this).first().children().children().children().children().css( 'color','#fff')
+        })
 
     </script>
 </body>
